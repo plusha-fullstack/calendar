@@ -1,0 +1,911 @@
+<!DOCTYPE html>
+<html lang="ru" class="l-html">
+    
+<!-- Mirrored from conf.spbu.ru/rus/event/search by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 02 Jun 2023 14:51:23 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+                    <meta charset="utf-8">
+            <meta http-equiv="X-UA-Compatible" content="IE=edge">
+            <meta name="viewport" content="width=device-width, initial-scale=1">
+                <meta name="description" content="Поиск событий">        <meta name="theme-color" content="#086aaa">
+        <meta name="msapplication-navbutton-color" content="#086aaa">
+        <meta name="apple-mobile-web-app-status-bar-style" content="#086aaa">
+
+        <title>
+                Поиск событий
+ -
+                            Орловсикй государственный университет
+                    </title>
+
+        <link rel="apple-touch-icon" href="../../static/aapl/AppIcon60x60.png">
+        <link rel="apple-touch-icon" sizes="76x76" href="../../static/aapl/AppIcon76x76.png">
+        <link rel="apple-touch-icon" sizes="120x120" href="../../static/aapl/AppIcon60x60%402x.png">
+        <link rel="apple-touch-icon" sizes="152x152" href="../../static/aapl/AppIcon76x76%402x.png">
+                    <link rel="stylesheet" href="responsive.css" />
+        
+                    <script type="text/javascript" src="../../build/main_layout_head-a359063564.js"></script>
+            <script src="../../js/routing87ba?callback=fos.Router.setData"></script>
+            <script type="text/javascript">
+                var svgIconsFilePath = '../../layout/layout3/img/svg.html';
+                var currentLocale = 'rus';
+            </script>
+        
+                    <link rel="icon" href="../../file/domain/oid443_8fa5ad196e1b1f5c620c81ff6a50fa4dcec72111.png" type="image/x-icon">
+            <link rel="shortcut icon" href="../../file/domain/oid443_8fa5ad196e1b1f5c620c81ff6a50fa4dcec72111.png" type="image/x-icon">
+            </head>
+        <body>
+        <!-- l-page-->
+        <div class="l-page">
+            <header class="header">
+    <div class="container container--nogutter">
+                                        
+        <div class="main-menu">
+            <div class="menu__cover"></div>
+            <a class="menu-trigger" href="../index.html">
+                <svg>
+                    <use xlink:href="#menu"></use>
+                </svg>
+                <span>Научная сеть</span>
+            </a>
+            <div class="menu__content">
+                <ul class="menu__list">
+                                            <li class="menu__item"><a href="../index.html">На главную</a></li>
+                                                                <li class="menu__item">
+                            <a href="search.html">
+                                                                    Календарь мероприятий
+                                                            </a>
+                        </li>
+                                    </ul>
+                                    <ul class="menu__list">
+                        <li class="menu__item"><a href="../register/index.html">Регистрация</a></li>
+                        <li class="menu__item"><a href="../login.html">Вход</a></li>
+                    </ul>
+                
+                                                                                
+                                                                                                                                    
+                                                    <ul class="menu__list menu__list--lang">
+                            <li class="menu__item"><a href="../../eng/event/search.html">Eng</a></li>
+                                                                                                                        </ul>
+                            </div>
+        </div>
+
+        <a class="logo" href="../index.html">Научная сеть</a>
+
+                                                
+                                                            
+                                    <a class="header__language" href="../../eng/event/search.html">Eng</a>
+                                    
+                    <a class="header__calendar" href="search.html">
+                                    Календарь мероприятий
+                            </a>
+        
+                    <div class="user-block nolog_user-block">
+                <div class="user-block__item">
+                    <a class="user-block__link" href="../register/index.html">Регистрация</a>
+                </div>
+                <div class="user-block__item">
+                    <a class="user-block__link user-block__link--login" href="../login.html">Вход</a>
+                </div>
+            </div>
+            </div>
+</header>
+
+            <!-- content-->
+            <main>
+                                                            <div class="calendar">
+        <div class="b-header">
+            <div class="b-header__container">
+                <div class="calendar__header">
+                    <h1 class="calendar__title">    Поиск событий
+</h1>
+                    <form class="form calendar__filter" method="GET">
+                        <div ng-app="sciApp">
+                            <div class="row">
+                                <div class="col-lg-8 col-sm-10 col-xs-12 calendar__filter-item">
+                                    <input type="text" id="sp_event_event_search_text" name="sp_event_event_search[text]" placeholder="Название события" value="">
+                                </div>
+                                <div class="col-lg-2 col-sm-2 calendar__filter-item calendar__filter-submit">
+                                    <input class="btn btn-wide btn-primary" type="submit" value="Найти">
+                                </div>
+                                <div class="col-lg-2 calendar__filter-controls">
+                                    <button class="btn btn-default btn-wide calendar__filter-open" type="button">
+                                        <span>Расширенный поиск</span>
+                                        <svg>
+                                            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#down-round"></use>
+                                        </svg>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="calendar__advanced calendar__advanced">
+                                <div class="row">
+                                    <div class="col-lg-3 col-sm-6 calendar__filter-item">
+                                        <label class="form__label">Начало не раньше</label>
+                                        <script type="text/javascript">
+            function sp_event_event_search_eventStartDate_init_datepicker() {
+                $('#sp_event_event_search_eventStartDate_wrapper').datetimepicker({
+                    format: 'DD.MM.YYYY',
+                    locale: 'ru',
+                    viewMode: 'days'
+                });
+
+                $('#sp_event_event_search_eventStartDate_wrapper input[type=text]').focus(function(){
+                    $('#sp_event_event_search_eventStartDate_wrapper').data("DateTimePicker").show();
+                });
+            }
+
+            if (document.readyState == "complete") {
+                sp_event_event_search_eventStartDate_init_datepicker();
+            } else {
+                addLoadEvent(function(){
+                    sp_event_event_search_eventStartDate_init_datepicker();
+                });
+            }
+        </script><div id="sp_event_event_search_eventStartDate_wrapper" class="datepicker-msu input-group date" ><input type="hidden" value=""  id="sp_event_event_search_eventStartDate" name="sp_event_event_search[eventStartDate]"><input type="text" class="datepicker-msu__input"  id="sp_event_event_search_eventStartDate_wrapper" name=""><div class="datepicker-msu__clear"><svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#cross"></use></svg></div><div class="datepicker-msu__calendar input-group-addon"><svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#calendar-slim"></use></svg></div></div>
+                                    </div>
+                                    <div class="col-lg-3 col-sm-6 calendar__filter-item">
+                                        <label class="form__label">Окончание не позже</label>
+                                        <script type="text/javascript">
+            function sp_event_event_search_eventEndDate_init_datepicker() {
+                $('#sp_event_event_search_eventEndDate_wrapper').datetimepicker({
+                    format: 'DD.MM.YYYY',
+                    locale: 'ru',
+                    viewMode: 'days'
+                });
+
+                $('#sp_event_event_search_eventEndDate_wrapper input[type=text]').focus(function(){
+                    $('#sp_event_event_search_eventEndDate_wrapper').data("DateTimePicker").show();
+                });
+            }
+
+            if (document.readyState == "complete") {
+                sp_event_event_search_eventEndDate_init_datepicker();
+            } else {
+                addLoadEvent(function(){
+                    sp_event_event_search_eventEndDate_init_datepicker();
+                });
+            }
+        </script><div id="sp_event_event_search_eventEndDate_wrapper" class="datepicker-msu input-group date" ><input type="hidden" value=""  id="sp_event_event_search_eventEndDate" name="sp_event_event_search[eventEndDate]"><input type="text" class="datepicker-msu__input"  id="sp_event_event_search_eventEndDate_wrapper" name=""><div class="datepicker-msu__clear"><svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#cross"></use></svg></div><div class="datepicker-msu__calendar input-group-addon"><svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#calendar-slim"></use></svg></div></div>
+                                    </div>
+                                    <div class="col-lg-3 col-sm-6 calendar__filter-item">
+                                        <label class="form__label" for="input_place">Город</label>
+                                            <div id="sp_event_event_search_location_container"></div>
+    <input
+            class="sci-location-search"
+            type="hidden"
+            data-slim="true"
+            data-preselected=''
+            data-url="/internal-api/v1/rus/main/location/search"
+            data-translations="&#x7B;&quot;placeholder&quot;&#x3A;&quot;&#x5C;u041d&#x5C;u0430&#x5C;u0447&#x5C;u043d&#x5C;u0438&#x5C;u0442&#x5C;u0435&#x20;&#x5C;u0432&#x5C;u0432&#x5C;u043e&#x5C;u0434&#x20;&#x5C;u043d&#x5C;u0430&#x5C;u0437&#x5C;u0432&#x5C;u0430&#x5C;u043d&#x5C;u0438&#x5C;u044f&#x20;&#x5C;u043d&#x5C;u0430&#x5C;u0441&#x5C;u0435&#x5C;u043b&#x5C;u0435&#x5C;u043d&#x5C;u043d&#x5C;u043e&#x5C;u0433&#x5C;u043e&#x20;&#x5C;u043f&#x5C;u0443&#x5C;u043d&#x5C;u043a&#x5C;u0442&#x5C;u0430&quot;,&quot;locationNotFound&quot;&#x3A;&quot;&#x5C;u0412&#x5C;u0430&#x5C;u0448&#x20;&#x5C;u0433&#x5C;u043e&#x5C;u0440&#x5C;u043e&#x5C;u0434&#x20;&#x5C;u043d&#x5C;u0435&#x20;&#x5C;u043d&#x5C;u0430&#x5C;u0439&#x5C;u0434&#x5C;u0435&#x5C;u043d,&#x20;&#x5C;u0432&#x5C;u0432&#x5C;u0435&#x5C;u0434&#x5C;u0438&#x5C;u0442&#x5C;u0435&#x20;&#x5C;u0435&#x5C;u0433&#x5C;u043e&#x20;&#x5C;u0432&#x20;&#x5C;u0440&#x5C;u0443&#x5C;u0447&#x5C;u043d&#x5C;u0443&#x5C;u044e&quot;,&quot;returnToSearch&quot;&#x3A;&quot;&#x5C;u0412&#x5C;u0435&#x5C;u0440&#x5C;u043d&#x5C;u0443&#x5C;u0442&#x5C;u044c&#x5C;u0441&#x5C;u044f&#x20;&#x5C;u043a&#x20;&#x5C;u043f&#x5C;u043e&#x5C;u0438&#x5C;u0441&#x5C;u043a&#x5C;u043e&#x5C;u0432&#x5C;u043e&#x5C;u0439&#x20;&#x5C;u0441&#x5C;u0442&#x5C;u0440&#x5C;u043e&#x5C;u043a&#x5C;u0435&quot;&#x7D;"
+                         id="sp_event_event_search_location" name="sp_event_event_search[location]"
+            value="" />
+
+                                    </div>
+                                    <div class="col-lg-3 col-sm-6 calendar__filter-item">
+                                        <label class="form__label" for="input_vuz">ВУЗ</label>
+                                            <div id="sp_event_event_search_relatedOrganization_container"></div>
+    <input id="sp_event_event_search_relatedOrganization"
+           class="sci-organization-search"
+           type="hidden"
+           data-translations="&#x7B;&quot;placeholder&quot;&#x3A;&quot;&#x5C;u041f&#x5C;u043e&#x5C;u0438&#x5C;u0441&#x5C;u043a&#x20;&#x5C;u043e&#x5C;u0440&#x5C;u0433&#x5C;u0430&#x5C;u043d&#x5C;u0438&#x5C;u0437&#x5C;u0430&#x5C;u0446&#x5C;u0438&#x5C;u0438&quot;,&quot;selectPlaceholder&quot;&#x3A;&quot;&#x5C;u0412&#x5C;u044b&#x5C;u0431&#x5C;u0440&#x5C;u0430&#x5C;u0442&#x5C;u044c&quot;&#x7D;"
+           data-url="/api/organization/tree-search?type=university"
+           data-children-url="/api/organization/children"
+           data-slim="true"
+           data-query-param="q"
+                      
+                                                                  
+            id="sp_event_event_search_relatedOrganization" name="sp_event_event_search[relatedOrganization]"
+           value="" />
+
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-lg-3 col-sm-6 calendar__filter-item">
+                                            <div class="form-group row">
+                <div class="col-xs-12">
+        <label for="sp_event_event_search_interests" class="form__label optional">
+
+        Интересы
+                                                    </label>        <input
+            type="hidden"
+            tree-choice=""
+            data-flat="false"
+            data-open-default-level="0"
+            data-parents-disabled="false"
+            data-position="left"
+            data-translations='{"selectInterests":"\u0412\u044b\u0431\u0440\u0430\u0442\u044c \u0441\u0444\u0435\u0440\u044b \u0438\u043d\u0442\u0435\u0440\u0435\u0441\u043e\u0432","interests":"\u0412\u044b\u0431\u0440\u0430\u0442\u044c \u043c\u0435\u0441\u0442\u0430","clearAll":"\u0423\u0431\u0440\u0430\u0442\u044c \u0432\u0441\u0435","done":"\u0413\u043e\u0442\u043e\u0432\u043e"}'
+            data-tree='[{"id":1,"title":"\u0415\u0441\u0442\u0435\u0441\u0442\u0432\u0435\u043d\u043d\u044b\u0435 \u043d\u0430\u0443\u043a\u0438","children":[{"id":3,"title":"\u0410\u0441\u0442\u0440\u043e\u043d\u043e\u043c\u0438\u044f","children":[]},{"id":4,"title":"\u0411\u0438\u043e\u0438\u043d\u0436\u0435\u043d\u0435\u0440\u0438\u044f, \u0431\u0438\u043e\u0438\u043d\u0444\u043e\u0440\u043c\u0430\u0442\u0438\u043a\u0430","children":[]},{"id":5,"title":"\u0411\u0438\u043e\u043b\u043e\u0433\u0438\u044f","children":[]},{"id":6,"title":"\u0413\u0435\u043e\u043b\u043e\u0433\u0438\u044f","children":[]},{"id":7,"title":"\u0413\u0435\u043e\u0444\u0438\u0437\u0438\u043a\u0430","children":[]},{"id":8,"title":"\u0413\u0435\u043e\u0445\u0438\u043c\u0438\u044f","children":[]},{"id":9,"title":"\u0418\u043d\u0444\u043e\u0440\u043c\u0430\u0442\u0438\u043a\u0430","children":[]},{"id":10,"title":"\u041b\u043e\u0433\u0438\u043a\u0430","children":[]},{"id":11,"title":"\u041c\u0430\u0442\u0435\u043c\u0430\u0442\u0438\u043a\u0430","children":[]},{"id":12,"title":"\u041c\u0435\u0434\u0438\u0446\u0438\u043d\u0430","children":[]},{"id":13,"title":"\u041c\u0435\u0445\u0430\u043d\u0438\u043a\u0430","children":[]},{"id":14,"title":"\u041d\u0435\u0434\u0440\u043e\u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u043d\u0438\u0435","children":[]},{"id":15,"title":"\u041f\u043e\u0447\u0432\u043e\u0432\u0435\u0434\u0435\u043d\u0438\u0435","children":[]},{"id":16,"title":"\u0424\u0438\u0437\u0438\u043a\u0430","children":[]},{"id":17,"title":"\u0424\u0438\u0437\u0438\u0447\u0435\u0441\u043a\u0430\u044f \u0433\u0435\u043e\u0433\u0440\u0430\u0444\u0438\u044f","children":[]},{"id":18,"title":"\u0425\u0438\u043c\u0438\u044f","children":[]},{"id":19,"title":"\u042d\u043a\u043e\u043b\u043e\u0433\u0438\u044f","children":[]}]},{"id":2,"title":"\u0413\u0443\u043c\u0430\u043d\u0438\u0442\u0430\u0440\u043d\u044b\u0435 \u043d\u0430\u0443\u043a\u0438","children":[{"id":20,"title":"\u0412\u043e\u0441\u0442\u043e\u043a\u043e\u0432\u0435\u0434\u0435\u043d\u0438\u0435 \u0438 \u0430\u0444\u0440\u0438\u043a\u0430\u043d\u0438\u0441\u0442\u0438\u043a\u0430","children":[]},{"id":21,"title":"\u0413\u043b\u043e\u0431\u0430\u043b\u0438\u0441\u0442\u0438\u043a\u0430","children":[]},{"id":22,"title":"\u0413\u043e\u0441\u0443\u0434\u0430\u0440\u0441\u0442\u0432\u0435\u043d\u043d\u043e\u0435 \u0443\u043f\u0440\u0430\u0432\u043b\u0435\u043d\u0438\u0435","children":[]},{"id":23,"title":"\u0416\u0443\u0440\u043d\u0430\u043b\u0438\u0441\u0442\u0438\u043a\u0430 \u0438 \u043c\u0430\u0441\u0441\u043e\u0432\u044b\u0435 \u043a\u043e\u043c\u043c\u0443\u043d\u0438\u043a\u0430\u0446\u0438\u0438","children":[]},{"id":24,"title":"\u0418\u043d\u043e\u0441\u0442\u0440\u0430\u043d\u043d\u044b\u0435 \u044f\u0437\u044b\u043a\u0438","children":[]},{"id":25,"title":"\u0418\u0441\u043a\u0443\u0441\u0441\u0442\u0432\u043e\u0437\u043d\u0430\u043d\u0438\u0435","children":[]},{"id":26,"title":"\u0418\u0441\u0442\u043e\u0440\u0438\u044f","children":[]},{"id":27,"title":"\u041a\u0443\u043b\u044c\u0442\u0443\u0440\u043e\u043b\u043e\u0433\u0438\u044f","children":[]},{"id":28,"title":"\u041c\u0435\u0436\u0434\u0443\u043d\u0430\u0440\u043e\u0434\u043d\u044b\u0435 \u043e\u0442\u043d\u043e\u0448\u0435\u043d\u0438\u044f","children":[]},{"id":29,"title":"\u041f\u0435\u0434\u0430\u0433\u043e\u0433\u0438\u043a\u0430","children":[]},{"id":30,"title":"\u041f\u043e\u043b\u0438\u0442\u043e\u043b\u043e\u0433\u0438\u044f","children":[]},{"id":31,"title":"\u041f\u0441\u0438\u0445\u043e\u043b\u043e\u0433\u0438\u044f","children":[]},{"id":32,"title":"\u0420\u0435\u0433\u0438\u043e\u043d\u043e\u0432\u0435\u0434\u0435\u043d\u0438\u0435","children":[]},{"id":33,"title":"\u0420\u0435\u043b\u0438\u0433\u0438\u043e\u0432\u0435\u0434\u0435\u043d\u0438\u0435","children":[]},{"id":34,"title":"\u0421\u043e\u0446\u0438\u043e\u043b\u043e\u0433\u0438\u044f","children":[]},{"id":35,"title":"\u0424\u0438\u043b\u043e\u043b\u043e\u0433\u0438\u044f","children":[]},{"id":36,"title":"\u0424\u0438\u043b\u043e\u0441\u043e\u0444\u0438\u044f","children":[]},{"id":37,"title":"\u042d\u043a\u043e\u043d\u043e\u043c\u0438\u043a\u0430","children":[]},{"id":38,"title":"\u042d\u043a\u043e\u043d\u043e\u043c\u0438\u0447\u0435\u0441\u043a\u0430\u044f \u0438 \u0441\u043e\u0446\u0438\u0430\u043b\u044c\u043d\u0430\u044f \u0433\u0435\u043e\u0433\u0440\u0430\u0444\u0438\u044f","children":[]},{"id":39,"title":"\u042e\u0440\u0438\u0441\u043f\u0440\u0443\u0434\u0435\u043d\u0446\u0438\u044f","children":[]}]}]'
+            data-modal="true"            value=""
+
+             id="sp_event_event_search_interests" name="sp_event_event_search[interests]">
+
+                </div>
+    </div>
+
+                                    </div>
+                                    <div class="col-lg-2 col-sm-6 calendar__filter-item">
+                                        <div class="form-group row">
+                <div class="col-xs-12">
+        <label for="sp_event_event_search_influenceStatus" class="form__label optional">
+
+        Статус
+                                                    </label>                <div class="form__custom-select " >
+                <select  id="sp_event_event_search_influenceStatus" name="sp_event_event_search[influenceStatus]" class=""><option value=""></option><option value="100">Международное</option><option value="90">Всероссийское</option><option value="80">Региональное</option><option value="60">Городское</option><option value="40">Вузовское</option></select>
+        <svg>
+            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#down-round"></use>
+        </svg>
+    </div>
+            </div>
+    </div>
+                                    </div>
+                                    <div class="col-lg-7 col-sm-6 calendar__filter-item">
+                                        <div class="row">
+                                            <div class="col-lg-4 col-sm-12">
+                                                <div class="form-group form__choice">
+                                                    <div class="row">
+                                                        <div class="col-xs-12">
+                                                            <label class="form__custom-control">
+                                                                    <input type="checkbox"  id="sp_event_event_search_registrationStatus" name="sp_event_event_search[registrationStatus]" value="1" />
+            <svg class="svg-control__checkbox"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#checked"></use></svg>
+    
+                                                                <span>Регистрация открыта</span>
+                                                            </label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-5 col-sm-12">
+                                                <div class="form-group form__choice">
+                                                    <div class="row">
+                                                        <div class="col-xs-12">
+                                                            <label class="form__custom-control">
+                                                                    <input type="checkbox"  id="sp_event_event_search_isNotOnlyUpcoming" name="sp_event_event_search[isNotOnlyUpcoming]" value="1" />
+            <svg class="svg-control__checkbox"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#checked"></use></svg>
+    
+                                                                <span>С учетом прошедших событий</span>
+                                                            </label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-xs-12 calendar__filter-submit--xs calendar__filter-submit">
+                                    <input class="btn btn-wide btn-primary" type="submit" value="Найти">
+                                </div>
+                                <div class="col-xs-12 text-center calendar__filter-controls--xs">
+                                    <button class="btn btn-link calendar__filter-open" type="button"><span>Расширенный поиск</span>
+                                        <svg>
+                                            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#down-round"></use>
+                                        </svg>
+                                    </button>
+                                    <button class="btn btn-link calendar__filter-close" type="button"><span>Простой поиск</span>
+                                        <svg>
+                                            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#down-round"></use>
+                                        </svg>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <div class="calendar__content">
+            <div class="container container--nogutter">
+                <article class="block">
+                    <div class="block__wrapper">
+                        <div id="event-list">
+                            <div id="infinite-scroll-content">
+                                            <article class="event-card" data-id="7897">
+    <div class="event-card__logo">
+                <a href="7897/index.html"><img src="../../media/cache/event_logo/blank/event.png" alt="Россия и мир: история и современность"></a>
+    </div>
+    <div class="event-card__infowrapper">
+        <div class="event-card__info event-card__info_future">
+            <header class="event-card__header">
+                <h2 class="event-card__name event-card__name_future">
+                    <a class="event-card__link event-card__link_future" href="7897/index.html">Россия и мир: история и современность</a>
+                </h2>
+                <p class="event-card__date event-card__date_future">21 Апреля 2024                </p>
+            </header>
+            <p class="event-card__about event-card__about_future">
+                <span class="event-card__place">
+                                        <span itemprop="org">СурГПУ</span>,
+                    <span itemprop="addressLocality">Сургут</span>,
+                    <span itemprop="addressCountry">Россия</span>
+                </span>
+                                    <span class="event-card__regdate">
+                                                    Регистрация:
+                            9 Января                                — 17 Марта 2024                                            </span>
+                            </p>
+                    
+        </div>
+            </div>
+</article>            <article class="event-card" data-id="7456">
+    <div class="event-card__logo">
+                <a href="7456/index.html"><img src="../../media/cache/event_logo/blank/event.png" alt="Образ, знак, символ - IV"></a>
+    </div>
+    <div class="event-card__infowrapper">
+        <div class="event-card__info event-card__info_future">
+            <header class="event-card__header">
+                <h2 class="event-card__name event-card__name_future">
+                    <a class="event-card__link event-card__link_future" href="7456/index.html">Образ, знак, символ - IV</a>
+                </h2>
+                <p class="event-card__date event-card__date_future">19                        — 21 Февраля 2024                </p>
+            </header>
+            <p class="event-card__about event-card__about_future">
+                <span class="event-card__place">
+                                        <span itemprop="org">РГУ им. А.Н.Косыгина</span>,
+                    <span itemprop="addressLocality">Москва</span>,
+                    <span itemprop="addressCountry">Россия</span>
+                </span>
+                                    <span class="event-card__regdate">
+                                                    Регистрация до
+                            25 Января 2024
+                                            </span>
+                            </p>
+                    
+        </div>
+                    <a href="../register/index0e05.html?redirectTo=http://conf.spbu.ru/rus/event/request/7456/form&amp;notification=warning.registration.before_request_form&amp;eventId=7456" class="event-card__btn btn btn-success">
+                            Подать заявку
+                    </a>
+        </div>
+</article>            <article class="event-card" data-id="8209">
+    <div class="event-card__logo">
+                <a href="8209/index.html"><img src="../../media/cache/event_logo/file/event/8209/rus_logo_098e5a287999be23a8a35de0385f000208c7dd78.png" alt="Карбышевские чтения - 2023"></a>
+    </div>
+    <div class="event-card__infowrapper">
+        <div class="event-card__info event-card__info_future">
+            <header class="event-card__header">
+                <h2 class="event-card__name event-card__name_future">
+                    <a class="event-card__link event-card__link_future" href="8209/index.html">Карбышевские чтения - 2023</a>
+                </h2>
+                <p class="event-card__date event-card__date_future">6                        — 8 Декабря 2023                </p>
+            </header>
+            <p class="event-card__about event-card__about_future">
+                <span class="event-card__place">
+                                        <span itemprop="org">Тюменское высшее военно-инженерное командное училище (военный институт)</span>,
+                    <span itemprop="addressLocality">Тюмень</span>,
+                    <span itemprop="addressCountry">Россия</span>
+                </span>
+                                    <span class="event-card__regdate">
+                                                    Регистрация:
+                            8 Мая                                — 25 Ноября 2023                                            </span>
+                            </p>
+                    
+        </div>
+            </div>
+</article>            <article class="event-card" data-id="8060">
+    <div class="event-card__logo">
+                <a href="8060/index.html"><img src="../../media/cache/event_logo/blank/event.png" alt="ИИМ 2023"></a>
+    </div>
+    <div class="event-card__infowrapper">
+        <div class="event-card__info event-card__info_future">
+            <header class="event-card__header">
+                <h2 class="event-card__name event-card__name_future">
+                    <a class="event-card__link event-card__link_future" href="8060/index.html">ИИМ 2023</a>
+                </h2>
+                <p class="event-card__date event-card__date_future">27                        — 30 Ноября 2023                </p>
+            </header>
+            <p class="event-card__about event-card__about_future">
+                <span class="event-card__place">
+                                        <span itemprop="org">СПбПУ</span>,
+                    <span itemprop="addressLocality">Санкт-Петербург</span>,
+                    <span itemprop="addressCountry">Россия</span>
+                </span>
+                                    <span class="event-card__regdate">
+                                                    Регистрация до
+                            31 Июля 2023
+                                            </span>
+                            </p>
+                    
+        </div>
+                    <a href="../register/indexb1a6.html?redirectTo=http://conf.spbu.ru/rus/event/request/8060/form&amp;notification=warning.registration.before_request_form&amp;eventId=8060" class="event-card__btn btn btn-success">
+                            Регистрация
+                    </a>
+        </div>
+</article>            <article class="event-card" data-id="8190">
+    <div class="event-card__logo">
+                <a href="8190/index.html"><img src="../../media/cache/event_logo/file/event/8190/rus_logo_e4c34257bb0872728d5afcc405c19af0e21cb43c.jpg" alt="ПТОАС-2023"></a>
+    </div>
+    <div class="event-card__infowrapper">
+        <div class="event-card__info event-card__info_future">
+            <header class="event-card__header">
+                <h2 class="event-card__name event-card__name_future">
+                    <a class="event-card__link event-card__link_future" href="8190/index.html">ПТОАС-2023</a>
+                </h2>
+                <p class="event-card__date event-card__date_future">23 Ноября 2023                </p>
+            </header>
+            <p class="event-card__about event-card__about_future">
+                <span class="event-card__place">
+                                        <span itemprop="org">АлтГТУ</span>,
+                    <span itemprop="addressLocality">Барнаул</span>,
+                    <span itemprop="addressCountry">Россия</span>
+                </span>
+                                    <span class="event-card__regdate">
+                                                    Регистрация:
+                            28 Октября                                — 21 Ноября 2023                                            </span>
+                            </p>
+                    
+        </div>
+            </div>
+</article>            <article class="event-card" data-id="8181">
+    <div class="event-card__logo">
+                <a href="8181/index.html"><img src="../../media/cache/event_logo/blank/event.png" alt="VIII Соколовские научные чтения"></a>
+    </div>
+    <div class="event-card__infowrapper">
+        <div class="event-card__info event-card__info_future">
+            <header class="event-card__header">
+                <h2 class="event-card__name event-card__name_future">
+                    <a class="event-card__link event-card__link_future" href="8181/index.html">VIII Соколовские научные чтения</a>
+                </h2>
+                <p class="event-card__date event-card__date_future">23                        — 24 Ноября 2023                </p>
+            </header>
+            <p class="event-card__about event-card__about_future">
+                <span class="event-card__place">
+                                        <span itemprop="org">МГУ</span>,
+                    <span itemprop="addressLocality">Москва</span>,
+                    <span itemprop="addressCountry">Россия</span>
+                </span>
+                                    <span class="event-card__regdate">
+                                                    Регистрация:
+                            17 Апреля                                — 12 Ноября 2023                                            </span>
+                            </p>
+                    
+        </div>
+            </div>
+</article>            <article class="event-card" data-id="8230">
+    <div class="event-card__logo">
+                <a href="8230/index.html"><img src="../../media/cache/event_logo/file/event/8230/rus_logo_fd2d135103e01d80a4bcebe5b29f1d279df72369.jpg" alt="МНСК «А. И. Чупров»"></a>
+    </div>
+    <div class="event-card__infowrapper">
+        <div class="event-card__info event-card__info_future">
+            <header class="event-card__header">
+                <h2 class="event-card__name event-card__name_future">
+                    <a class="event-card__link event-card__link_future" href="8230/index.html">МНСК «А. И. Чупров»</a>
+                </h2>
+                <p class="event-card__date event-card__date_future">22 Ноября 2023                </p>
+            </header>
+            <p class="event-card__about event-card__about_future">
+                <span class="event-card__place">
+                                        <span itemprop="org">МГУ</span>,
+                    <span itemprop="addressLocality">Москва</span>,
+                    <span itemprop="addressCountry">Россия</span>
+                </span>
+                                    <span class="event-card__regdate">
+                                                    Регистрация до
+                            1 Ноября 2023
+                                            </span>
+                            </p>
+                    
+        </div>
+                    <a href="../register/indexa2bd.html?redirectTo=http://conf.spbu.ru/rus/event/request/8230/form&amp;notification=warning.registration.before_request_form&amp;eventId=8230" class="event-card__btn btn btn-success">
+                            Отправить тезисы
+                    </a>
+        </div>
+</article>            <article class="event-card" data-id="8182">
+    <div class="event-card__logo">
+                <a href="8182/index.html"><img src="../../media/cache/event_logo/blank/event.png" alt="Архитектура – Строительство – Транспорт – Экономика"></a>
+    </div>
+    <div class="event-card__infowrapper">
+        <div class="event-card__info event-card__info_future">
+            <header class="event-card__header">
+                <h2 class="event-card__name event-card__name_future">
+                    <a class="event-card__link event-card__link_future" href="8182/index.html">Архитектура – Строительство – Транспорт – Экономика</a>
+                </h2>
+                <p class="event-card__date event-card__date_future">22                        — 23 Ноября 2023                </p>
+            </header>
+            <p class="event-card__about event-card__about_future">
+                <span class="event-card__place">
+                                        <span itemprop="org">СПбГАСУ</span>,
+                    <span itemprop="addressLocality">Санкт-Петербург</span>,
+                    <span itemprop="addressCountry">Россия</span>
+                </span>
+                                    <span class="event-card__regdate">
+                                                    Регистрация:
+                            17 Апреля                                — 16 Октября 2023                                            </span>
+                            </p>
+                    
+        </div>
+            </div>
+</article>            <article class="event-card" data-id="8169">
+    <div class="event-card__logo">
+                <a href="8169/index.html"><img src="../../media/cache/event_logo/blank/event.png" alt="ICMV 2023"></a>
+    </div>
+    <div class="event-card__infowrapper">
+        <div class="event-card__info event-card__info_future">
+            <header class="event-card__header">
+                <h2 class="event-card__name event-card__name_future">
+                    <a class="event-card__link event-card__link_future" href="8169/index.html">ICMV 2023</a>
+                </h2>
+                <p class="event-card__date event-card__date_future">15                        — 17 Ноября 2023                </p>
+            </header>
+            <p class="event-card__about event-card__about_future">
+                <span class="event-card__place">
+                                        <span itemprop="org">ИППИ РАН</span>,
+                    <span itemprop="addressLocality">Ереван</span>,
+                    <span itemprop="addressCountry">Армения</span>
+                </span>
+                                    <span class="event-card__regdate">
+                                                    Регистрация:
+                            1 Апреля                                — 31 Июля 2023                                            </span>
+                            </p>
+                    
+        </div>
+            </div>
+</article>            <article class="event-card" data-id="8225">
+    <div class="event-card__logo">
+                <a href="8225/index.html"><img src="../../media/cache/event_logo/file/event/8225/rus_logo_ac8d8c141182910e5d97b05a86306cf8047dd094.png" alt="Конкурс-конференция по оптике, лазерной физике и физике плазмы"></a>
+    </div>
+    <div class="event-card__infowrapper">
+        <div class="event-card__info event-card__info_future">
+            <header class="event-card__header">
+                <h2 class="event-card__name event-card__name_future">
+                    <a class="event-card__link event-card__link_future" href="8225/index.html">Конкурс-конференция по оптике, лазерной физике и физике плазмы</a>
+                </h2>
+                <p class="event-card__date event-card__date_future">14                        — 18 Ноября 2023                </p>
+            </header>
+            <p class="event-card__about event-card__about_future">
+                <span class="event-card__place">
+                                        <span itemprop="org">Самарский университет</span>,
+                    <span itemprop="addressLocality">Самара</span>,
+                    <span itemprop="addressCountry">Россия</span>
+                </span>
+                                    <span class="event-card__regdate">
+                                                    Регистрация:
+                            26 Мая                                — 25 Сентября 2023                                            </span>
+                            </p>
+                    
+        </div>
+            </div>
+</article>            <article class="event-card" data-id="8165">
+    <div class="event-card__logo">
+                <a href="8165/index.html"><img src="../../media/cache/event_logo/file/event/8165/rus_logo_5522e94bda369e25adb171a0997067f5a19862f4.jpg" alt="Органические радикалы и органическая электрохимия (2023)"></a>
+    </div>
+    <div class="event-card__infowrapper">
+        <div class="event-card__info event-card__info_future">
+            <header class="event-card__header">
+                <h2 class="event-card__name event-card__name_future">
+                    <a class="event-card__link event-card__link_future" href="8165/index.html">Органические радикалы и органическая электрохимия (2023)</a>
+                </h2>
+                <p class="event-card__date event-card__date_future">13                        — 15 Ноября 2023                </p>
+            </header>
+            <p class="event-card__about event-card__about_future">
+                <span class="event-card__place">
+                                        <span itemprop="org">ИОХ РАН</span>,
+                    <span itemprop="addressLocality">Москва</span>,
+                    <span itemprop="addressCountry">Россия</span>
+                </span>
+                                    <span class="event-card__regdate">
+                                                    Регистрация до
+                            15 Сентября 2023
+                                            </span>
+                            </p>
+                    
+        </div>
+                    <a href="../register/indexc7a5.html?redirectTo=http://conf.spbu.ru/rus/event/request/8165/form&amp;notification=warning.registration.before_request_form&amp;eventId=8165" class="event-card__btn btn btn-success">
+                            Подать заявку
+                    </a>
+        </div>
+</article>            <article class="event-card" data-id="8198">
+    <div class="event-card__logo">
+                <a href="8198/index.html"><img src="../../media/cache/event_logo/blank/event.png" alt="«АнтропоКонф: человек, природа, технологии»"></a>
+    </div>
+    <div class="event-card__infowrapper">
+        <div class="event-card__info event-card__info_future">
+            <header class="event-card__header">
+                <h2 class="event-card__name event-card__name_future">
+                    <a class="event-card__link event-card__link_future" href="8198/index.html">«АнтропоКонф: человек, природа, технологии»</a>
+                </h2>
+                <p class="event-card__date event-card__date_future">10                        — 11 Ноября 2023                </p>
+            </header>
+            <p class="event-card__about event-card__about_future">
+                <span class="event-card__place">
+                                        <span itemprop="org">ТюмГУ</span>,
+                    <span itemprop="addressLocality">Тюмень</span>,
+                    <span itemprop="addressCountry">Россия</span>
+                </span>
+                                    <span class="event-card__regdate">
+                                                    Регистрация:
+                            26 Апреля                                — 1 Октября 2023                                            </span>
+                            </p>
+                    
+        </div>
+            </div>
+</article>            <article class="event-card" data-id="8133">
+    <div class="event-card__logo">
+                <a href="8133/index.html"><img src="../../media/cache/event_logo/file/event/8133/rus_logo_7cbdb362aae6f567e6a05512c4bb1929a0d658a5.png" alt="Изотекст - 2023"></a>
+    </div>
+    <div class="event-card__infowrapper">
+        <div class="event-card__info event-card__info_future">
+            <header class="event-card__header">
+                <h2 class="event-card__name event-card__name_future">
+                    <a class="event-card__link event-card__link_future" href="8133/index.html">Изотекст - 2023</a>
+                </h2>
+                <p class="event-card__date event-card__date_future">10                        — 12 Ноября 2023                </p>
+            </header>
+            <p class="event-card__about event-card__about_future">
+                <span class="event-card__place">
+                                        <span itemprop="org">ИЭА РАН</span>,
+                    <span itemprop="addressLocality">Москва</span>,
+                    <span itemprop="addressCountry">Россия</span>
+                </span>
+                                    <span class="event-card__regdate">
+                                                    Регистрация:
+                            23 Марта                                — 1 Сентября 2023                                            </span>
+                            </p>
+                    
+        </div>
+            </div>
+</article>            <article class="event-card" data-id="8177">
+    <div class="event-card__logo">
+                <a href="8177/index.html"><img src="../../media/cache/event_logo/file/event/8177/rus_logo_fe6a0e384a1a264a17e8f2ef3f670668733741ec.jpg" alt="XXVI Туполевские чтения (школа молодых ученых)"></a>
+    </div>
+    <div class="event-card__infowrapper">
+        <div class="event-card__info event-card__info_future">
+            <header class="event-card__header">
+                <h2 class="event-card__name event-card__name_future">
+                    <a class="event-card__link event-card__link_future" href="8177/index.html">XXVI Туполевские чтения (школа молодых ученых)</a>
+                </h2>
+                <p class="event-card__date event-card__date_future">9                        — 10 Ноября 2023                </p>
+            </header>
+            <p class="event-card__about event-card__about_future">
+                <span class="event-card__place">
+                                        <span itemprop="org">КНИТУ КАИ</span>,
+                    <span itemprop="addressLocality">Казань</span>,
+                    <span itemprop="addressCountry">Россия</span>
+                </span>
+                                    <span class="event-card__regdate">
+                                                    Регистрация:
+                            17 Апреля                                — 13 Июня 2023                                            </span>
+                            </p>
+                    
+        </div>
+            </div>
+</article>            <article class="event-card" data-id="8141">
+    <div class="event-card__logo">
+                <a href="8141/index.html"><img src="../../media/cache/event_logo/blank/event.png" alt="Forestry – 2023"></a>
+    </div>
+    <div class="event-card__infowrapper">
+        <div class="event-card__info event-card__info_future">
+            <header class="event-card__header">
+                <h2 class="event-card__name event-card__name_future">
+                    <a class="event-card__link event-card__link_future" href="8141/index.html">Forestry – 2023</a>
+                </h2>
+                <p class="event-card__date event-card__date_future">26                        — 27 Октября 2023                </p>
+            </header>
+            <p class="event-card__about event-card__about_future">
+                <span class="event-card__place">
+                                        <span itemprop="org">ВГЛТУ</span>,
+                    <span itemprop="addressLocality">Воронеж</span>,
+                    <span itemprop="addressCountry">Россия</span>
+                </span>
+                                    <span class="event-card__regdate">
+                                                    Регистрация закрыта
+                                            </span>
+                            </p>
+                    
+        </div>
+            </div>
+</article>            <article class="event-card" data-id="8205">
+    <div class="event-card__logo">
+                <a href="8205/index.html"><img src="../../media/cache/event_logo/file/event/8205/rus_logo_f804dbef411f03a9fa4addc979c946652c3301bb.png" alt="МУЗЕЙ – НАУКЕ"></a>
+    </div>
+    <div class="event-card__infowrapper">
+        <div class="event-card__info event-card__info_future">
+            <header class="event-card__header">
+                <h2 class="event-card__name event-card__name_future">
+                    <a class="event-card__link event-card__link_future" href="8205/index.html">МУЗЕЙ – НАУКЕ</a>
+                </h2>
+                <p class="event-card__date event-card__date_future">25                        — 26 Октября 2023                </p>
+            </header>
+            <p class="event-card__about event-card__about_future">
+                <span class="event-card__place">
+                                        <span itemprop="org">МГУ</span>,
+                    <span itemprop="addressLocality">Москва</span>,
+                    <span itemprop="addressCountry">Россия</span>
+                </span>
+                                    <span class="event-card__regdate">
+                                                    Регистрация:
+                            4 Мая                                — 31 Августа 2023                                            </span>
+                            </p>
+                    
+        </div>
+            </div>
+</article>            <article class="event-card" data-id="8229">
+    <div class="event-card__logo">
+                <a href="8229/index.html"><img src="../../media/cache/event_logo/file/event/8229/rus_logo_cee8fa916beae996c23a09d4d89401d274e91a3e.png" alt="Современные проблемы и перспективы социально-экономического развития предприятий, отраслей, регионов"></a>
+    </div>
+    <div class="event-card__infowrapper">
+        <div class="event-card__info event-card__info_future">
+            <header class="event-card__header">
+                <h2 class="event-card__name event-card__name_future">
+                    <a class="event-card__link event-card__link_future" href="8229/index.html">Современные проблемы и перспективы социально-экономического развития предприятий, отраслей, регионов</a>
+                </h2>
+                <p class="event-card__date event-card__date_future">19                        — 21 Октября 2023                </p>
+            </header>
+            <p class="event-card__about event-card__about_future">
+                <span class="event-card__place">
+                                        <span itemprop="org">ПГТУ</span>,
+                    <span itemprop="addressLocality">Йошкар-Ола</span>,
+                    <span itemprop="addressCountry">Россия</span>
+                </span>
+                                    <span class="event-card__regdate">
+                                                    Регистрация:
+                            1 Июня                                — 16 Октября 2023                                            </span>
+                            </p>
+                    
+        </div>
+            </div>
+</article>            <article class="event-card" data-id="7948">
+    <div class="event-card__logo">
+                <a href="7948/index.html"><img src="../../media/cache/event_logo/file/event/7948/rus_logo_6fd1d2750cdbe471127c4198468764a11c3f84e6.png" alt="КМУЧ–2023. Человек, интеллект, познание"></a>
+    </div>
+    <div class="event-card__infowrapper">
+        <div class="event-card__info event-card__info_future">
+            <header class="event-card__header">
+                <h2 class="event-card__name event-card__name_future">
+                    <a class="event-card__link event-card__link_future" href="7948/index.html">КМУЧ–2023. Человек, интеллект, познание</a>
+                </h2>
+                <p class="event-card__date event-card__date_future">17                        — 19 Октября 2023                </p>
+            </header>
+            <p class="event-card__about event-card__about_future">
+                <span class="event-card__place">
+                                        <span itemprop="org">Институт философии Национальной академии наук Беларуси</span>,
+                    <span itemprop="addressLocality">Новосибирск</span>,
+                    <span itemprop="addressCountry">Россия</span>
+                </span>
+                                    <span class="event-card__regdate">
+                                                    Регистрация до
+                            10 Июня 2023
+                                            </span>
+                            </p>
+                    
+        </div>
+                    <a href="../register/index85b6.html?redirectTo=http://conf.spbu.ru/rus/event/request/7948/form&amp;notification=warning.registration.before_request_form&amp;eventId=7948" class="event-card__btn btn btn-success">
+                            Подать заявку
+                    </a>
+        </div>
+</article>            <article class="event-card" data-id="8153">
+    <div class="event-card__logo">
+                <a href="8153/index.html"><img src="../../media/cache/event_logo/blank/event.png" alt="Шарыгинские чтения"></a>
+    </div>
+    <div class="event-card__infowrapper">
+        <div class="event-card__info event-card__info_future">
+            <header class="event-card__header">
+                <h2 class="event-card__name event-card__name_future">
+                    <a class="event-card__link event-card__link_future" href="8153/index.html">Шарыгинские чтения</a>
+                </h2>
+                <p class="event-card__date event-card__date_future">11                        — 13 Октября 2023                </p>
+            </header>
+            <p class="event-card__about event-card__about_future">
+                <span class="event-card__place">
+                                        <span itemprop="org">ТУСУР</span>,
+                    <span itemprop="addressLocality">Томск</span>,
+                    <span itemprop="addressCountry">Россия</span>
+                </span>
+                                    <span class="event-card__regdate">
+                                                    Регистрация:
+                            1 Марта                                — 25 Августа 2023                                            </span>
+                            </p>
+                    
+        </div>
+            </div>
+</article>            <article class="event-card" data-id="8228">
+    <div class="event-card__logo">
+                <a href="8228/index.html"><img src="../../media/cache/event_logo/file/event/8228/rus_logo_29b8418a3b46bb5edc207a85766f7415015a2f00.png" alt="Понт Эвксинский-2023"></a>
+    </div>
+    <div class="event-card__infowrapper">
+        <div class="event-card__info event-card__info_future">
+            <header class="event-card__header">
+                <h2 class="event-card__name event-card__name_future">
+                    <a class="event-card__link event-card__link_future" href="8228/index.html">Понт Эвксинский-2023</a>
+                </h2>
+                <p class="event-card__date event-card__date_future">9                        — 14 Октября 2023                </p>
+            </header>
+            <p class="event-card__about event-card__about_future">
+                <span class="event-card__place">
+                                        <span itemprop="org">ФГБУН  ИМБИ</span>,
+                    <span itemprop="addressLocality">Севастополь</span>,
+                    <span itemprop="addressCountry">Россия</span>
+                </span>
+                                    <span class="event-card__regdate">
+                                                    Регистрация:
+                            30 Мая                                — 30 Июня 2023                                            </span>
+                            </p>
+                    
+        </div>
+            </div>
+</article>    
+                            </div>
+                                                            <div id="infinite-scroll-trigger" class="btn btn-default btn-wide">Загрузить еще...</div>
+                                                    </div>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </div>
+                                                </main>
+            <!-- End content-->
+        </div>
+        <!-- End l-page-->
+
+        <footer class="footer-v2">
+                        <div class="footer-v2__links">
+                <a href="../promo.html">О проекте</a>
+                <a href="../policy.html">Конфиденциальность</a>
+                <a href="../doc/current/index.html" target="_blank">Cправка</a>
+                <a href="../feedback/index.html">Обратная связь</a>
+            </div>
+            <p class="footer-v2__text"></p>
+                            <p class="footer-v2__text">Санкт-Петербургский государственный университет</p>
+                                        <p class="footer-v2__text">199034, г.Санкт-Петербург, Университетская наб., д.7-9</p>
+                                    </footer>
+
+        <!-- End l-page-->
+                        <script type="text/javascript" src="../../build/main_layout-3bc758916f.js"></script>
+            <script type="text/javascript">
+                /* global vars */
+                var sciApp = angular.module('sciApp', ['ngSanitize', 'sci.treeChoice', 'sci.location']);
+                sciApp.filter('unsafe', function($sce) {
+                    return function(val) {
+                        return $sce.trustAsHtml(val);
+                    };
+                });
+            </script>
+        
+    <script type="text/javascript" src="../../build/event_search-b2d0b2b730.js"></script>
+    <script type="text/javascript">
+        $(function(){
+            waypointInfiniteScroll(
+                function(currentPage) {
+                    let delimiter = '';
+                    if (window.location.search.length === 0) {
+                        delimiter = '?';
+                    }
+
+                    return window.location.pathname + delimiter + window.location.search + '&page=' + (currentPage + 1);
+                },
+                function(data) {
+                    return $($.parseHTML(data)).filter('article.event-card').length > 0;
+                },
+                'GET'
+            );
+
+                    });
+    </script>
+    </body>
+                    <!-- Yandex.Metrika counter -->
+    <script type="text/javascript">
+        (function(w, c) {
+            (w[c] = w[c] || []).push(function() {
+                try {
+                    w.yaCounter283554 = new Ya.Metrika({id:283554,
+                        clickmap:true,
+                        trackLinks:true,
+                        trackHash:true, webvisor:true});
+                }
+                catch(e) { }
+            });
+        })(window, "yandex_metrika_callbacks");
+    </script>
+    <script src="../../../mc.yandex.ru/metrika/watch.js" type="text/javascript" defer="defer"></script>
+    <noscript><div><img src="http://mc.yandex.ru/watch/283554" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+    <!-- /Yandex.Metrika counter -->
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-69654754-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'UA-69654754-1');
+    </script>
+    <!-- /Global site tag (gtag.js) - Google Analytics -->
+    
+<!-- Mirrored from conf.spbu.ru/rus/event/search by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 02 Jun 2023 14:52:06 GMT -->
+</html>
